@@ -1,0 +1,487 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    list-style: none;
+    text-decoration: none;
+    /* to sccroll up and down all the sections smothly */
+    scroll-behavior: smooth; 
+    
+}
+/* to create a standard variable to define two colors and padding to use for each specific element */
+:root {
+    --color: hsl(240, 7%, 60%);
+    --color2:  hsl(260, 12%, 15%);
+    --padding: 0.5rem;
+    --padding2: 15px;
+  }
+body{
+    
+    display: block;
+}
+
+
+ 
+
+h1,h2,h3,h4,h5,h6,p{
+    font-family: "arial";
+    letter-spacing: 2px;
+    
+    
+   
+}
+
+ /* navigation */
+.nav-container{
+    display: block;
+    width: 100%;
+    height: 60px;
+    background-color: hsl(260, 12%, 15%);
+    box-shadow: 0 2px 5px 0 rgb(60, 60, 173);
+    position: fixed;
+    z-index: 3;
+    /* to avoid overfollow content,Content is clipped if necessary to fit the padding box */
+   overflow: hidden;
+   letter-spacing: 1px;
+}
+/*  Grid Layout means with rows and columns,  without having to use floats and positioning. */
+.nav-container .nav-items{ 
+    display: grid;
+    grid-template-columns: 30% 40%;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+}
+
+
+.nav-container .nav-items .nav-item-right{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1.5rem;
+    
+  
+}
+.nav-container li{
+    padding:var(--padding);
+}
+.nav-container li a{
+    display: block;
+    color: hsl(0, 48%, 63%);
+    font-size: 1rem;
+    font-weight: 500;
+    
+    
+    
+}
+
+.nav-container li a:hover{
+    background-color:var(--color);
+    
+}
+/* here i specified which animation i used which it is color */
+@keyframes coloring{
+    from{background-color: hsla(0, 48%, 63%, 0.758); ;}
+    to{background-color: rgba(155, 138, 115, 0.433);}
+}
+
+
+/* header */
+header{
+    position: relative;
+    max-width: 1200px;
+    height: auto;
+    margin: auto;
+}
+
+/* here I justified body backround with an image */
+header .bg-img{
+    position: relative;
+    height: 580px;
+    background-image: linear-gradient(hsla(37, 85%, 5%, 0.5), rgba(69, 69, 61, 0.5)) ,url(https://d1dvx3bj5slcdg.cloudfront.net/wp-content/uploads/2020/10/laziza-front-page-1536x1257.jpg);
+ 
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+    margin-bottom: 150px;
+    
+   
+}
+
+/* i used flex box with wrap which means that the flex items will wrap if necessary */
+
+.flex-title{
+    display: flex;
+   flex-direction: row;
+  
+    text-align: center;
+    top: 25%;
+    padding: var(--padding2);
+    background-color:var(--color);
+    position: absolute;
+   left: 0;
+
+   
+  
+   
+
+}
+
+
+.flex-title > div{
+    background-color: rgba(183, 172, 185, 0.245);
+    text-align: center;
+   
+    font-style: bold;
+    padding: var(--padding2);
+    font-size: 3rem;
+    color: var(--color2);
+    font-style: oblique;
+    animation: coloring 5s 5 linear;
+  
+}
+
+
+
+
+/* menu and header responsives*/
+
+@media screen and (max-width:768px){
+    .header .title .header-sub-title{
+       margin-top: 20vh;
+    }
+    .header .title .header-title{
+        font-size: 4rem;
+    }
+
+    .nav-container .nav-items{
+
+        display:flex;
+        text-align: center;
+       margin:  0 20px  0 40px;
+
+    }
+     
+    .flex-title{
+        display: inline;
+       
+     
+    
+}
+.nav-container{
+
+    height: 80px;
+
+   
+}
+}
+
+
+/* menu section*/
+
+
+#menu{
+    padding: 40px 0 40px 0;
+    display: grid;
+
+    margin-top: 8rem;
+    align-items: center;
+   
+    
+
+}
+
+.introduce {
+    width: 100%;
+   padding: 40px 100px 40px 100px;
+    text-align: center;
+    background-color: hsl(35, 49%, 58%);
+    margin-top: 1rem;
+  
+    
+   
+  
+   
+}
+.introduce > h1{
+    font-size: xx-large;
+}
+ 
+
+ #menu-item-description{
+   
+    color: rgb(35, 24, 22);
+    font-weight: 600;
+   
+  
+}
+
+
+
+.section{
+
+    width: 100%;
+    align-self: center;
+  
+}
+#menu-row{
+    font-size: 600;
+    padding: 0 100px 0 100px;
+  
+    
+}
+#menu-col{
+    box-shadow: 2px 2px 2px #071515;
+    border: 1px solid #021b1b;
+    background-color: antiquewhite;
+    margin: 5px;
+    flex: 1;
+}
+#menu-col h4{
+    background-color: #623007d7;
+    color: var(--color2);
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    font-family: cursive;
+
+}
+
+    
+
+
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 5px;
+}
+.box img{
+
+    border-radius: 10%;
+    /* to show the images visibilty degree */
+    opacity: 0.5;
+    transition: transform 0.3s;
+}
+  
+.box img:hover {
+    /* when we press the pic so it will be clear */
+    opacity: 1.0;
+    transform: translateY(-10px);
+  }
+
+
+
+    
+
+
+ 
+@media screen and( max-width:768){
+    #menu{
+        grid-template-columns: 2fr;
+
+    }
+  
+}
+
+/* Reservation Secction */
+/*   here I used Grid Layout with rows ,  without having to use floats and positioning. */
+#contact{
+    display: grid;
+    grid-template-rows: min-content;
+  margin-top: 100px;
+  height: 100vh;
+ 
+
+}
+.contact{
+   margin-top: 100px;
+    padding-left: 1rem;
+}
+ .contact h1{
+   
+    padding-left: .5rem;
+    font-size: 1.5rem;
+    color:var(--color2)
+ }
+    
+
+.contact p{
+   color: var(--color2);
+    padding-left: .5rem;
+   margin-top: .5rem;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ 
+
+.contact-form input{
+display: block;
+
+width: 85%;
+border: 1px solid rgb(9, 9, 9);
+padding: 1rem;
+margin-top: 1rem;
+}
+.contact-form input :focus{
+   border: #021b1b;
+}
+.contact-form .date-time{
+   
+    justify-content: center;
+   align-items: center;
+   margin-top: .5rem;
+ 
+   
+
+}
+
+.contact-form .date-time label{
+    display: block;
+   
+    font-family: "playfair display" ;
+    color: rgb(44, 40, 40);
+    
+}
+.message-btn{
+    border: none;
+    display: inline-block;
+    color: rgb(75, 127, 105);
+    background-color: rgb(11, 11, 1);
+    font-size: 1rem;
+    padding: pointer;
+    margin-left: 2rem;
+    margin-top: 5px;
+    border: 1px solid rgb(197, 90, 32);
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* transformation time : */
+    transition: transform 1s;
+}
+.message-btn:hover{
+  
+    color: hsl(156, 39%, 50%);
+    background-color: rgb(189, 189, 184);
+    /* transform is an animation to move the element up and down */
+    transform: translateY(-10px);
+    
+}
+
+
+/* footer Section */
+
+
+footer{
+  top: 100px;
+ 
+}
+/* here Grid Layout means with  columns,   */
+.footer-info{
+   display: grid ;
+   grid-template-columns: 30% 20% 0 20% ;
+    background-color:rgb(27, 26, 26) ;
+    color: azure;
+   width: 100%;
+    margin-bottom: 0.1rem;
+    padding-bottom: 20px;
+
+   
+    
+}
+
+
+
+.footer-width-about{
+   
+   padding-left: 2rem;
+}
+
+  
+
+
+#follow{ 
+    margin-top: .8rem;
+    font-weight: 600;
+    color: blue;
+   
+
+}
+
+
+.social-media  ul li a{
+    color: whitesmoke;
+   float: inline-start;
+   margin-top: 6px;
+  padding-left: 5px;
+display: inline;
+transition: transform 1s;
+ 
+  
+}
+
+.social-media  ul li a:hover{
+    transform: translateY(-10px);
+    
+   
+}
+
+#call a{
+    color: rgb(219, 229, 237);
+    padding: 5px;
+    display: inline;
+  
+}
+
+
+@media screen and ( max-width:641px){
+
+    .footer-info{
+        width: 100%;
+       
+       gap: 30px;
+       
+    }
+    
+    
+    }
+    @media (max-width: 1922px){   /* when the width < 1922 then header, nav, title and section will take this properties.   */
+ 
+
+ 
+        .nav-container{ padding: 12px 40px;}
+
+ 
+
+        }
+
+
+@media(max-width:350px){
+    img{width:80%;}
+
+
+    #menu-col{
+       
+      width: 10rem;
+     
+    }
+
+    .nav-container .nav-items{
+
+        display:flex;
+        text-align: center;
+       margin:  0 20px  0 40px;
+
+}
+.flex-title{margin-bottom: 20%};
+#call{padding-right: 70px;}
+
+
+.footer-info{width: 100%;}
+
+ }
+ 
